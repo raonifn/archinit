@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-sudo pacman -S --noconfirm i3-wm xorg-server xorg xf86-video-intel mesa xorg-xinit dmenu feh scrot termite i3locki i3status pavucontrol arandr pulseaiudio pulseaudio-alsa awesome-terminal-fonts ttf-font-awesome dunst libnotify
+sudo pacman -S --noconfirm i3-wm xorg-server xorg xf86-video-intel mesa xorg-xinit dmenu feh scrot termite i3locki i3status pavucontrol arandr pulseaiudio pulseaudio-alsa awesome-terminal-fonts ttf-font-awesome dunst libnotify network-manager-applet
 
 cat <<END > $HOME/.xinitrc
 systemctl --user import-environment DISPLAY
