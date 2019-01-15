@@ -1,8 +1,9 @@
 #!/bin/bash -xe
 
-sudo pacman -S --noconfirm i3-wm xorg-server xorg xf86-video-intel mesa xorg-xinit dmenu feh scrot termite i3locki i3status pavucontrol arandr pulseaiudio pulseaudio-alsa awesome-terminal-fonts ttf-font-awesome dunst
+sudo pacman -S --noconfirm i3-wm xorg-server xorg xf86-video-intel mesa xorg-xinit dmenu feh scrot termite i3locki i3status pavucontrol arandr pulseaiudio pulseaudio-alsa awesome-terminal-fonts ttf-font-awesome dunst libnotify
 
 cat <<END > $HOME/.xinitrc
+systemctl --user import-environment DISPLAY
 exec i3
 END
 cat <<END | sudo tee /etc/X11/xorg.conf.d/00-keyboard.conf
