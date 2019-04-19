@@ -12,12 +12,12 @@ echo 'export LANG=en_US.UTF-8' >> /etc/profile
 
 echo 'KEYMAP=br-abnt2' > /etc/vconsole.conf
 
-echo 'primalfear' > /etc/hostname
+echo 'icedearth' > /etc/hostname
 
 cat > /etc/hosts  <<END
 127.0.0.1	localhost
 ::1		localhost
-127.0.1.1	primalfear.localdomain primalfear
+127.0.1.1	icedearth.localdomain icedearth
 END
 
 cp /etc/mkinitcpio.conf /etc/mkinitcpio.conf.bk
@@ -28,10 +28,11 @@ pacman -S --noconfirm vim openssh grub efibootmgr net-tools networkmanager
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 
-UUID=20cf337f-ce64-43e9-a658-decc3ce48fc4
+UUID=6e4af0f6-95bd-4235-83b5-8fec313782f9
 sed -i "s/GRUB_CMDLINE_LINUX=\"\"/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$UUID:cryptroot root=\/dev\/mapper\/cryptroot\"/g" /etc/default/grub
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
+

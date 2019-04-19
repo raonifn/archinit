@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-sudo pacman -S --noconfirm i3-wm xorg-server xorg xf86-video-intel mesa xorg-xinit dmenu feh scrot termite i3locki i3status pavucontrol arandr pulseaiudio pulseaudio-alsa awesome-terminal-fonts ttf-font-awesome dunst libnotify network-manager-applet
+sudo pacman -S --noconfirm i3-wm xorg-server xorg xf86-video-intel mesa xorg-xinit dmenu feh scrot termite i3lock i3status pavucontrol arandr pulseaudio pulseaudio-alsa awesome-terminal-fonts ttf-font-awesome dunst libnotify network-manager-applet
 
 cat <<END > $HOME/.xinitrc
 systemctl --user import-environment DISPLAY
@@ -15,9 +15,10 @@ Section "InputClass"
 EndSection
 END
 
-mount -o size=5G remount /tmp
-yaourt -S  nerd-fonts-complete
+yay -S --noconfirm bumblebee-status
 
+mount -o size=5G remount /tmp
+yay -S --noconfirm  nerd-fonts-complete
 
 systemctl --user enable pulseaudio
 systemctl --user enable pulseaudio.socket
