@@ -24,7 +24,7 @@ cp /etc/mkinitcpio.conf /etc/mkinitcpio.conf.bk
 cp $dir/mkinitcpio.conf /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
-pacman -S --noconfirm vim openssh grub efibootmgr net-tools networkmanager
+pacman -S --noconfirm vim base-devel openssh grub efibootmgr net-tools networkmanager
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 
